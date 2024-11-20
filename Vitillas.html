@@ -51,7 +51,8 @@
         </div>
         <main class="container my-5">
             <div class="text-center">
-                <img src="C:\Users\Lenovo\Documents\vitillas Webseite\Vitillas.jpeg" alt="Bild von Vitillas" class="product-img">
+                <!-- Aktualisiere den Bildpfad -->
+                <img src="images/Vitillas.jpeg" alt="Bild von Vitillas" class="product-img">
             </div>
             <form id="produkt-form" class="mt-4">
                 <div class="mb-3">
@@ -123,7 +124,6 @@
     <script>
         let warenkorb = JSON.parse(localStorage.getItem("warenkorb")) || [];
 
-        // Produkt zum Warenkorb hinzufügen
         document.getElementById("add-to-cart").addEventListener("click", () => {
             const menge = document.getElementById("menge").value;
             const preis = menge == "9" ? 9.99 : menge == "15" ? 14.99 : 19.99;
@@ -133,7 +133,6 @@
             alert("Produkt wurde dem Warenkorb hinzugefügt!");
         });
 
-        // Warenkorb laden
         function ladeWarenkorb() {
             const warenkorbListe = document.getElementById("warenkorb-liste");
             const gesamtText = document.getElementById("gesamtpreis");
@@ -156,7 +155,6 @@
             gesamtText.textContent = `Gesamt: ${gesamt.toFixed(2)} €`;
         }
 
-        // Bestellung abschicken
         function bestellungAbschicken() {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
@@ -167,7 +165,6 @@
             zeigeSeite('shop');
         }
 
-        // Seiten wechseln
         function zeigeSeite(seite) {
             document.querySelectorAll("section").forEach((section) => {
                 section.classList.remove("active");
@@ -177,10 +174,14 @@
             if (seite === "warenkorb") ladeWarenkorb();
         }
 
-        // Checkout anzeigen
         function zeigeCheckout() {
             zeigeSeite("checkout");
         }
     </script>
 </body>
 </html>
+
+ 
+                 
+    
+     
